@@ -5,6 +5,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toogleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,6 +18,10 @@ const Header = () => {
       .catch((error) => {
         navigate("/error");
       });
+  };
+
+  const handleGptSearch =() =>{
+    dispatch(toogleGptSearchView());
   };
 
   useEffect(() => {
@@ -44,6 +49,8 @@ const Header = () => {
       />
       {user && (
         <div className=" flex p-6 justify-between">
+          <button className=" py-2 px-4 mx-4 my-4 bg-purple-800 text-white rounded-lg" 
+          onClick={handleGptSearch}>GPT Search</button>
           <img
             className="hidden md:block w-13 h-12 m-1"
             alt="usericon"
