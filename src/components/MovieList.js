@@ -1,3 +1,4 @@
+import { FaChevronLeft } from "react-icons/fa";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
@@ -5,9 +6,10 @@ const MovieList = ({ title, movies }) => {
     <div className="px-6 ">
       <h1 className=" text-3xl py-4 text-white">{title}</h1>
       <div className=" flex overflow-x-scroll">
-        <div className=" flex">
+        <div className=" flex"> 
+        
           {movies?.map((movie) => (
-            <MovieCard posterPath={movie.poster_path} key={movie.id} />
+            <MovieCard icon={FaChevronLeft}  posterPath={movie.poster_path} key={movie.id} />
           ))}
         </div>
       </div>
