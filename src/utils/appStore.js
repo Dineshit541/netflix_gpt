@@ -4,6 +4,7 @@ import moviesReducer from "./moviesSlice";
 import gptReducer from "./gptSlice";
 import configReducer from "./configSlice";
 import searchReducer from "./searchSlice";
+import selectedReducer from "./selectedMovieSlice";
 
 const appStore=configureStore(
     {
@@ -12,7 +13,8 @@ const appStore=configureStore(
             movies:moviesReducer,
             gpt:gptReducer,
             config:configReducer,
-            search:searchReducer
+            search:searchReducer,
+            selected:selectedReducer
         }
     }
 )

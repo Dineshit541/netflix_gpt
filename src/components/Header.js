@@ -66,7 +66,7 @@ const Header = () => {
         <div className=" flex p-6 justify-between">
           {showGptSearch && (
             <select
-              className=" p-2 px-3 m-3 bg-gray-900 text-white"
+              className=" self-center p-2 rounded-md text-white font-semibold  cursor-pointer focus:outline-none bg-gray-700 "
               onChange={handleLangugageChange}
             >
               {SUPPORTET_LANGUAGES.map((language) => (
@@ -77,21 +77,16 @@ const Header = () => {
             </select>
           )}
           <button
-            className=" py-2 px-4 mx-4 my-4  bg-gray-700 text-white rounded-lg"
+            className=" py-2 px-4 mx-4 my-4  bg-red-700 text-white rounded-lg "
             onClick={handleGptSearch}
           >
       
             { showGptSearch ?"Home Page" : "Movies Search"}
           </button>
-          <img
-            className="hidden md:block w-10  py-4"
-            alt="usericon"
-            src={user?.photoURL}
-          />
-
+        
           <button
             onClick={handleSingout}
-            className="p-4 mx-4 my-3  bg-slate-900 text-white font-bold text-md rounded-md"
+            className="p-4 mx-4 my-3  bg-slate-900 text-white font-bold text-md rounded-md hover:bg-red-700"
           >
           <FaPowerOff />
           </button>
